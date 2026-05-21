@@ -31,10 +31,13 @@ inputs:
   github-org:
     description: 'Github Organisation where the repository is hosted, to check for the latest release.'
     required: false
+  is-complete:
+    description: 'Whether the task should be marked as complete or not.'
+    required: false
   
 branding:
   icon: 'chevron-right'
   color: 'gray-dark'
 runs:
-  using: 'node16'
+  using: 'node24'
   main: 'index.js'

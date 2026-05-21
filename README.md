@@ -5,6 +5,7 @@ This action integrates asana with github.
 
 ### Prerequisites
 
+- **Node.js 24** (matches this action’s `node24` runtime). Use `.node-version` with [fnm](https://github.com/Schniz/fnm) / [nvm](https://github.com/nvm-sh/nvm) for local work.
 - Asana account with the permission on the particular project you want to integrate with.
 - For creating tasks in Asana, you must provide the Asana project where the issues will be added to.
 - For adding PR link to Asana, you must provide the task url in the PR description.
