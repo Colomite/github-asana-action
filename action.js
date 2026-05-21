@@ -8,7 +8,7 @@ function buildAsanaClient() {
     return asana.Client.create({
         defaultHeaders: { 'asana-enable': 'new-sections,string_ids' },
         logAsanaChangeWarnings: false
-    }).useAccessToken(ASANA_PAT).authorize();
+    }).useAccessToken(ASANA_PAT);
 }
 
 function buildGithubClient(githubPAT){
