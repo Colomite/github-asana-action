@@ -21,7 +21,8 @@ function findAsanaTasks(){
     const
         TRIGGER_PHRASE = core.getInput('trigger-phrase'),
         PULL_REQUEST = github.context.payload.pull_request,
-        REGEX_STRING = `${TRIGGER_PHRASE} https:\\/\\/app.asana.com\\/.*\\/project\\/(?<project>\\d+)\\/task\\/(?<task>\\d+)`,
+        BASE_URL_REGEX = `https:\\/\\/app.asana.com\\/.*\\/project\\/(?<project>\\d+)\\/task\\/(?<task>\\d+)`,
+        REGEX_STRING = TRIGGER_PHRASE == "" ? BASE_URL_REGEX : `${TRIGGER_PHRASE} ${BASE_URL_REGEX}`,
         REGEX = new RegExp(REGEX_STRING, 'g');
  
     console.info('looking for asana task link in body', PULL_REQUEST.body, 'regex', REGEX_STRING);
